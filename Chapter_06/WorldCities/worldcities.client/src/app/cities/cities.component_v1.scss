@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-color: #dee2e6;
+
+  th, td {
+    text-align: left;
+  }
+
+  tbody > tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+    color: #212529;
+  }
+}
