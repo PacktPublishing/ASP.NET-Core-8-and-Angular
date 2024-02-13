@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 import { environment } from './../../environments/environment';
 import { LoginRequest } from './login-request';
@@ -16,7 +16,7 @@ export class AuthService {
 
   private tokenKey: string = "token";
 
-  private _authStatus = new Subject<boolean>();
+  private _authStatus = new BehaviorSubject<boolean>(false);
   public authStatus = this._authStatus.asObservable();
 
   isAuthenticated(): boolean {

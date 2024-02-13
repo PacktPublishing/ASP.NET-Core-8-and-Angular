@@ -10,7 +10,7 @@
         /// <summary>
         /// Login attempt result message
         /// </summary>
-        public string Message { get; set; } = null!;
+        public required string Message { get; set; }
 
         /// <summary>
         /// The JWT token if the login attempt is successful, or NULL if not

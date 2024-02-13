@@ -1,5 +1,5 @@
 <app-nav-menu></app-nav-menu>
-<div class="alert alert-warning" *ngIf="!this.isOnline()">
+<div class="alert alert-warning" *ngIf="isOffline | async">
   <strong>WARNING</strong>: the app is currently <i>offline</i>:
   some features that rely upon the back-end might not work as
   expected. This message will automatically disappear as soon

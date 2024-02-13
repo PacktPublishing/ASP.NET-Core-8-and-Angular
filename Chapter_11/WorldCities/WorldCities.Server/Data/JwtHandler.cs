@@ -23,14 +23,14 @@ namespace WorldCities.Server.Data
 
         public async Task<JwtSecurityToken> GetTokenAsync(ApplicationUser user)
         {
-            var jwtOptions = new JwtSecurityToken(
+            var jwt = new JwtSecurityToken(
                 issuer: _configuration["JwtSettings:Issuer"],
                 audience: _configuration["JwtSettings:Audience"],
                 claims: await GetClaimsAsync(user),
                 expires: DateTime.Now.AddMinutes(Convert.ToDouble(
                     _configuration["JwtSettings:ExpirationTimeInMinutes"])),
                 signingCredentials: GetSigningCredentials());
-            return jwtOptions;
+            return jwt;
         }
 
         private SigningCredentials GetSigningCredentials()
